@@ -1,7 +1,6 @@
 # 🔒 My SOC Portfolio
 Welcome to my Security Operations Center portfolio website.
-## 🌐 Live Website
-https://your-username.github.io/my-portfolio/
+
 ## 📂 What's Inside
 - SOC Reports
 - Detection Rules (Sigma, SPL, YARA)
