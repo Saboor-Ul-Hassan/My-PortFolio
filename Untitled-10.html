@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #e8f0fe;
+            color: #1a2a3a;
+            line-height: 1.6;
+        }
+
+        /* Header - Soft Navy */
+        header {
+            background: #1a365d;
+            color: white;
+            padding: 18px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-bottom: 3px solid #48bb78;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: #f0f4f8;
+        }
+
+        header h1 i {
+            color: #48bb78;
+            margin-right: 12px;
+        }
+
+        nav {
+            margin-top: 12px;
+        }
+
+        nav a {
+            color: #bee3f8;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9rem;
+            padding: 6px 14px;
+            border-radius: 25px;
+            transition: 0.3s;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background: #48bb78;
+            color: #1a365d;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section - Clean */
+        .hero {
+            background: white;
+            padding: 55px 40px;
+            border-radius: 25px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            text-align: center;
+            border-bottom: 5px solid #48bb78;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1a365d;
+        }
+
+        .hero h2 i {
+            color: #48bb78;
+            margin-right: 10px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            color: #4a6a85;
+            margin: 12px 0;
+        }
+
+        .badge-student {
+            display: inline-block;
+            background: #48bb78;
+            color: white;
+            padding: 6px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-student i {
+            margin-right: 8px;
+        }
+
+        .btn-primary {
+            background: #1a365d;
+            color: white;
+            padding: 14px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 18px;
+            transition: 0.3s;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary:hover {
+            background: #48bb78;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(72, 187, 120, 0.3);
+        }
+
+        /* Section Titles - Mint */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 40px 0 20px 0;
+            padding-bottom: 14px;
+            border-bottom: 4px solid #48bb78;
+            display: inline-block;
+            color: #1a365d;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title i {
+            color: #48bb78;
+            margin-right: 14px;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 24px;
+            margin: 20px 0;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 24px;
+            border-radius: 20px;
+            transition: 0.3s;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #48bb78;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+        }
+
+        .card .icon {
+            font-size: 2.5rem;
+            color: #48bb78;
+            margin-bottom: 14px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: #1a365d;
+        }
+
+        .card p {
+            color: #4a6a85;
+            font-size: 0.95rem;
+        }
+
+        .card .tag {
+            display: inline-block;
+            background: #e8f0fe;
+            padding: 3px 14px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            margin-top: 10px;
+            margin-right: 5px;
+            color: #1a365d;
+            font-weight: 600;
+        }
+
+        /* List Items */
+        .list-item {
+            background: white;
+            padding: 18px 24px;
+            border-radius: 16px;
+            margin-bottom: 14px;
+            border-left: 5px solid #48bb78;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .list-item:hover {
+            border-color: #48bb78;
+            background: #f7fafc;
+        }
+
+        .list-item .title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #1a365d;
+        }
+
+        .list-item .meta {
+            color: #718096;
+            font-size: 0.85rem;
+        }
+
+        .badge {
+            background: #48bb78;
+            color: white;
+            padding: 3px 18px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Internship Section - Special */
+        .internship-card {
+            background: linear-gradient(135deg, #1a365d, #2a4a7a);
+            padding: 35px 40px;
+            border-radius: 25px;
+            margin: 20px 0;
+            border: 2px solid #48bb78;
+            box-shadow: 0 6px 30px rgba(26, 54, 93, 0.2);
+            color: white;
+        }
+
+        .internship-card h3 {
+            font-size: 1.8rem;
+            color: #48bb78;
+            margin-bottom: 10px;
+        }
+
+        .internship-card h3 i {
+            margin-right: 12px;
+        }
+
+        .internship-card .company {
+            font-size: 1.2rem;
+            color: #bee3f8;
+            margin-bottom: 10px;
+        }
+
+        .internship-card p {
+            color: #e2e8f0;
+            font-size: 1rem;
+            max-width: 700px;
+        }
+
+        .internship-card .tag-intern {
+            display: inline-block;
+            background: #48bb78;
+            color: #1a365d;
+            padding: 4px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-top: 12px;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 18px 0;
+        }
+
+        .social-links a {
+            background: white;
+            padding: 12px 26px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #1a365d;
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .social-links a:hover {
+            background: #1a365d;
+            color: white;
+            border-color: #1a365d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 54, 93, 0.15);
+        }
+
+        .social-links a i {
+            margin-right: 10px;
+            color: #48bb78;
+        }
+
+        .social-links a:hover i {
+            color: white;
+        }
+
+        /* Blog */
+        .blog-entry {
+            background: white;
+            padding: 24px 30px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .blog-entry:hover {
+            border-color: #48bb78;
+            background: #f7fafc;
+        }
+
+        .blog-entry h3 {
+            color: #1a365d;
+            font-size: 1.2rem;
+        }
+
+        .blog-entry .date {
+            color: #718096;
+            font-size: 0.85rem;
+        }
+
+        .blog-entry a {
+            color: #48bb78;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .blog-entry a:hover {
+            color: #1a365d;
+            text-decoration: underline;
+        }
+
+        /* Certifications */
+        .cert-item {
+            background: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: 2px solid #48bb78;
+            color: #1a365d;
+            font-weight: 500;
+            display: inline-block;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .cert-item i {
+            color: #48bb78;
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a365d;
+            color: #bee3f8;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 3px solid #48bb78;
+        }
+
+        footer i {
+            color: #48bb78;
+        }
+
+        footer .highlight {
+            color: #48bb78;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            nav a {
+                margin: 0 4px;
+                font-size: 0.75rem;
+                padding: 4px 10px;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .internship-card {
+                padding: 25px 20px;
+            }
+            .internship-card h3 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><i class="fas fa-shield-alt"></i> Portfolio</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#reports">Reports</a>
+        <a href="#rules">Rules</a>
+        <a href="#playbooks">Playbooks</a>
+        <a href="#internship">Internship</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#social">Connect</a>
+        <a href="#blog">Blog</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <!-- HOME -->
+    <section id="home" class="hero">
+        <h2><i class="fas fa-user-shield"></i> Security Portfolio</h2>
+        <p class="subtitle">Cybersecurity Professional | SOC Analyst</p>
+        <span class="badge-student"><i class="fas fa-graduation-cap"></i> Security Specialist</span>
+        <p style="margin-top: 18px; color: #4a6a85; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Your description goes here.
+        </p>
+        <a href="#projects" class="btn-primary"><i class="fas fa-rocket"></i> Explore My Work</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2 class="section-title"><i class="fas fa-user-astronaut"></i> About Me</h2>
+        <div style="background: white; padding: 30px; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+            <p style="font-size: 1.05rem; color: #1a365d;">
+                Your about content goes here.
+            </p>
+            <p style="margin-top: 12px; color: #4a6a85;">
+                <strong style="color: #1a365d;">Skills:</strong> Your skills
+            </p>
+            <p style="color: #4a6a85;">
+                <strong style="color: #1a365d;">Goal:</strong> Your goal
+            </p>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2 class="section-title"><i class="fas fa-code"></i> Projects</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Project 1</h3>
+                <p>Description goes here.</p>
+                <span class="tag">Tag1</span>
+                <span class="tag">Tag2</span>
+            </div>
+            <div class="card">
+                <div class="icon"><i class="fas fa-robot"></i></div>
+                <h3>Project 2</h3>
+                <p>Description goes here.</p>
+                <span class="tag">Tag1</span>
+                <span class="tag">Tag2</span>
+            </div>
+            <div class="card">
+                <div class="icon"><i class="fas fa-database"></i></div>
+                <h3>Project 3</h3>
+                <p>Description goes here.</p>
+                <span class="tag">Tag1</span>
+                <span class="tag">Tag2</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOC REPORTS -->
+    <section id="reports">
+        <h2 class="section-title"><i class="fas fa-file-alt"></i> SOC Reports</h2>
+        <div class="list-item">
+            <span class="title">Report Title 1</span>
+            <span class="meta">Type</span>
+            <span class="badge">PDF</span>
+        </div>
+        <div class="list-item">
+            <span class="title">Report Title 2</span>
+            <span class="meta">Type</span>
+            <span class="badge">PDF</span>
+        </div>
+        <div class="list-item">
+            <span class="title">Report Title 3</span>
+            <span class="meta">Type</span>
+            <span class="badge">PDF</span>
+        </div>
+    </section>
+
+    <!-- DETECTION RULES -->
+    <section id="rules">
+        <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> Detection Rules</h2>
+        <div class="list-item">
+            <span class="title">Rule 1</span>
+            <span class="meta">Type</span>
+            <span class="badge">Sigma</span>
+        </div>
+        <div class="list-item">
+            <span class="title">Rule 2</span>
+            <span class="meta">Type</span>
+            <span class="badge">SPL</span>
+        </div>
+        <div class="list-item">
+            <span class="title">Rule 3</span>
+            <span class="meta">Type</span>
+            <span class="badge">YARA</span>
+        </div>
+    </section>
+
+    <!-- PLAYBOOKS -->
+    <section id="playbooks">
+        <h2 class="section-title"><i class="fas fa-book"></i> Playbooks</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div class="icon"><i class="fas fa-user-shield"></i></div>
+                <h3>Playbook 1</h3>
+                <p>Description goes here.</p>
+            </div>
+            <div class="card">
+                <div class="icon"><i class="fas fa-lock"></i></div>
+                <h3>Playbook 2</h3>
+                <p>Description goes here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERNSHIP - NEW SECTION -->
+    <section id="internship">
+        <h2 class="section-title"><i class="fas fa-briefcase"></i> Internship</h2>
+        <div class="internship-card">
+            <h3><i class="fas fa-building"></i> Internship Position</h3>
+            <div class="company"><i class="fas fa-map-marker-alt" style="color: #48bb78; margin-right: 8px;"></i> Company Name · Location</div>
+            <p>
+                Description of your internship goes here. What you learned, what you worked on, 
+                and your achievements during the internship.
+            </p>
+            <span class="tag-intern"><i class="fas fa-calendar-alt"></i> Duration: 2024 - Present</span>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+        <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px;">
+            <span class="cert-item"><i class="fas fa-check-circle"></i> Certification 1</span>
+            <span class="cert-item"><i class="fas fa-check-circle"></i> Certification 2</span>
+            <span class="cert-item"><i class="fas fa-check-circle"></i> Certification 3</span>
+        </div>
+    </section>
+
+    <!-- SOCIAL -->
+    <section id="social">
+        <h2 class="section-title"><i class="fas fa-share-alt"></i> Connect</h2>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="#"><i class="fas fa-file-pdf"></i> Resume</a>
+            <a href="#"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog">
+        <h2 class="section-title"><i class="fas fa-pen"></i> Blog & Research</h2>
+        <div class="blog-entry">
+            <h3>Blog Post 1</h3>
+            <div class="date">Date · Read time</div>
+            <p>Description goes here.</p>
+            <a href="#">Read More →</a>
+        </div>
+        <div class="blog-entry">
+            <h3>Blog Post 2</h3>
+            <div class="date">Date · Read time</div>
+            <p>Description goes here.</p>
+            <a href="#">Read More →</a>
+        </div>
+        <div class="blog-entry">
+            <h3>Blog Post 3</h3>
+            <div class="date">Date · Read time</div>
+            <p>Description goes here.</p>
+            <a href="#">Read More →</a>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>
+        <i class="fas fa-shield-alt"></i> Built with <i class="fas fa-heart" style="color: #48bb78;"></i> 
+        by <span class="highlight">Security Professional</span>
+    </p>
+    <p style="font-size: 0.85rem; margin-top: 6px; color: #bee3f8;">
+        Defending the digital world
+    </p>
+</footer>
+
+</body>
+</html>
